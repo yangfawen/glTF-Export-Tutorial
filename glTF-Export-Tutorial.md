@@ -47,10 +47,13 @@
 ## 3.3使用Unity导出glTF
 ### 3.3.1Unity的基础了解
 Unity支持丰富的材质类型（通过设置不同的Shader来实现），目前导出glTF只支持两种材质（两种Shader）,即：
+
 Standard (Specular Setup)
+
 ![](glTF-Export-Tutorial/Materials.png)
 
 Standard
+
 ![](glTF-Export-Tutorial/Materials2.png)
 
 这两种材质分别对应了PBR材质的两种工作流，即金属/粗糙度（Metallic/Roughness）工作流和镜面/光泽度（Specular/Glossiness）工作流.
@@ -58,22 +61,28 @@ Standard
 ### 3.3.2PBR材质的基础了解
 那么问题就来了，我们应该选择怎么样的工作流程呢？做传统次世代贴图的，又该怎么处理呢？
 
-第针对这两个问题，可以参考：
+针对这两个问题，可以参考：
+
 PBR材质的基础理论：https://www.marmoset.co/posts/basic-theory-of-physically-based-rendering/
+
 PBR材质的特性：https://www.marmoset.co/posts/physically-based-rendering-and-you-can-too/
+
 如何选择自己合适的工作流程以及如何从传统次世代转到PBR流程：https://www.marmoset.co/posts/pbr-texture-conversion/
 
 关于贴图的转换，可以参考如下简单的流程：
 我们知道传统次世代有：Diffuse（漫反射）、Specular（高光）、Normal（法线）、Emission（自发光）；通过和PBR流程对比，我们仅仅需要转换Diffuse和Specular；
 
 关于Diffuse，传统的方式中如果将Diffuse和透明贴图分成两张贴图则需要合并成一张含有Alpha的贴图，具体方式如下：
+
 ![](glTF-Export-Tutorial/basecolor_alpha_combined.jpg)
 
 
 然后我们将Diffuse贴图拆分为Albedo和AO，具体方式如下：
+
 ![](glTF-Export-Tutorial/traditionalconvert001.png)
 
 接着我们将Specular拆分为Specular和Glossiness，具体方式如下：
+
 ![](glTF-Export-Tutorial/traditionalconvert002.png)
 
 
@@ -82,33 +91,43 @@ PBR材质的特性：https://www.marmoset.co/posts/physically-based-rendering-an
 上面我们已经知道，如何将传统次世代贴图转换为PBR贴图，实际上是镜面/光泽度（Specular/Glossiness）工作流的贴图，那么接下来就具体说明一些在Unity中的设置；
 
 首先选择如下材质Shader：Standard（Specular Setup）
+
 ![](glTF-Export-Tutorial/pbr_specular.png)
 
 导出glTF只支持上图中红框部分，我们分开来说：
+
 1.Albebo：支持后面的颜色设置导出，即：
+
 ![](glTF-Export-Tutorial/Albedo.png)
 
 2.Specular：
 如果当我们未设置Specular贴图时，我们能够设置Specular的颜色值，并且还能够被导出；
+
 ![](glTF-Export-Tutorial/Specular.png)
 
 3.Smoothness：
 其实就是指Gossiness，只是在Unity软件换了一个名称而已，但是我们发现他不能设置贴图，而是通过另外一种形式来实现的，我们能看到Smoothness下面有一个Source选项，这个就是指Smoothness贴图的来源，比如下图中的设置就是指Smoothness贴图的来源与Specular贴图的Alpha通道，所以就需要美术人员将Specular贴图与Smoothness（Glossiness）贴图合并。
+
 ![](glTF-Export-Tutorial/Smoothness.png)
 
 除此之外，关于Smoothness我们还应该注意，如果Specular贴图没有设置时，自然的Smoothness贴图也将没有设置，此时Smoothness的强度参数（图中的0.5）能够被导出，如果Specular已经设置了贴图（即Smoothness贴图也设置了），那么设置的强度值（0.5）将不能被导出；
 
 4.Normal：支持后面的法线强度值导出，即：
+
 ![](glTF-Export-Tutorial/Normal.png)
 
 5.Occlusion（AO贴图）：支持后面的强度值导出，即：
+
 ![](glTF-Export-Tutorial/Occlusion.png)
 
 6.Emission：支持自发光颜色导出和自发光强度导出，即：
+
 ![](glTF-Export-Tutorial/Emission.png)
 但是我们必须注意：强度值需要为0-1，否则导出后也不能支持；
 
 #### 导出glTF步骤
+首先安装插件，插件下载地址：https://github.com/yangfawen/glTF-Export-Tutorial/blob/master/glTF-Export-Plugins/glTF-Unity-Export.unitypackage
+
 ![](glTF-Export-Tutorial/Unity_glTF1.png)
 - - - -
 ![](glTF-Export-Tutorial/Unity_glTF2.png)
