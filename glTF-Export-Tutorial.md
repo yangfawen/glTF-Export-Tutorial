@@ -134,3 +134,25 @@ PBR材质的特性：https://www.marmoset.co/posts/physically-based-rendering-an
 - - - -
 ![](glTF-Export-Tutorial/Unity_glTF3.png)
 
+### 3.3.4金属/粗糙度（Metallic/Roughness）工作流的模型在Unity中导出glTF；
+
+这是PBR材质的另外一种工作流，那么接下来就具体说明一些在Unity中的设置；
+
+首先选择如下材质Shader：Standard
+- - - -
+![](glTF-Export-Tutorial/pbr_metallic.png)
+- - - -
+导出glTF只支持上图中红框部分，需要知道两种工作流区别仅仅在与第二三项（Metallic、Smoothness）,其它的部分保持不变；
+
+Metallic：
+如果当我们未设置Metallic贴图时，我们能够设置Metallic的颜色值，并且还能够被导出；
+![](glTF-Export-Tutorial/Metallic.png)
+
+Smoothness：
+Unity软件为了保持和镜面/光泽度工作流一样，仍然将保留了Smoothness的说法，但是采用金属/粗糙度工作流的模型材质，采用的是粗糙度贴图（Roughness），这种情况下需要提前转换一下，可以使用比如Photoshop等软件中将粗糙度贴图进行黑白反向，便能得到Smoothness贴图；
+
+和和镜面/光泽度工作流一样，我们不能直接设置Smoothness贴图的来源，所以需要将上面通过黑白反向得来的贴图与Metallic贴图进行和合并；
+
+> 后面我们将会新增对Standard (Roughness setup)的支持，如下图我们发现Roughness贴图能够直接设置，对美术来说是一件非常方便的事情。  
+
+![](glTF-Export-Tutorial/pbr_metallic_roughness.png)
