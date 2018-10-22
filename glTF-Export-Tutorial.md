@@ -4,7 +4,6 @@
 * glTF的设计是面向实时渲染应用的，尽量提供可以直接传输给图形API的数据形式，不再需要二次转换；
 * 通俗来讲，我们可以理解他为3D领域的JPEG；
 * glTF使用一组通用的参数来定义基于物理渲染（PBR）的材质；
-* glTF defines materials using a common set of parameters that are based on widely used material representations from Physically-Based Rendering (PBR)
 更多关于glTF的介绍还可以查看https://www.khronos.org/gltf/
 
 # 二.RAVVAR WebAR/3D 渲染器对glTF的支持性如何？
