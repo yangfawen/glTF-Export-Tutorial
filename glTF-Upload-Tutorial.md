@@ -25,6 +25,4 @@
 
 此时可能会有这样的疑问，这个glTF究竟是什么文件？我改如何制作？点击此处获取相关教程。
 
-还可以参考：[教程1](https://www.khronos.org/blog/art-pipeline-for-gltf) [教程2](https://developers.facebook.com/docs/sharing/3d-posts/glb-tutorials) 
-[下载PDF](https://github.com/yangfawen/glTF-Export-Tutorial/blob/master/glTF-Upload-Plugins/GLB-Tutorial.pdf)
-导出的glTF文件如下：包含一个gltf文件、一个bin文件、以及一个文件夹（文件夹可能会有多层，贴图位于里面的文件夹中）
+还可以参考：[教程1](https://www.khronos.org/blog/art-pipeline-for-gltf) [教程2](https://developers.facebook.com/docs/sharing/3d-posts/glb-tutorials) 访问Facebook不方便可以[下载PDF](https://github.com/yangfawen/glTF-Export-Tutorial/blob/master/glTF-Upload-Plugins/GLB-Tutorial.pdf)
