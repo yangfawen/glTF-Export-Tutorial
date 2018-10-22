@@ -26,7 +26,7 @@
 
 # 三.如何导出满足RAVVAR WebAR/3D编辑器要求的glTF文件？
 ## 3.1制作符合规范的模型动画
-具体规范请参考：https://github.com/yangfawen/RAVVAR-3D-Model-Specification
+具体规范请参考：https://ravvar.cn/helps
 
 ## 3.2导出glTF的流程图示
 ![](glTF-Export-Tutorial/glTF_Art_Pipeline.png)
