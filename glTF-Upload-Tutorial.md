@@ -23,6 +23,6 @@
 
 经过以上的部分，我们再回到编辑器中，就会呈现完整的PBR渲染效果了。
 
-此时可能会有这样的疑问，这个glTF究竟是什么文件？我改如何制作？点击此处获取相关教程。
+此时可能会有这样的疑问，这个glTF究竟是什么文件？我改如何制作？[点击此处](https://github.com/yangfawen/glTF-Export-Tutorial/blob/master/glTF-Export-Tutorial.md)获取相关教程。
 
 还可以参考：[教程1](https://www.khronos.org/blog/art-pipeline-for-gltf) [教程2](https://developers.facebook.com/docs/sharing/3d-posts/glb-tutorials) 访问Facebook不方便可以[下载PDF](https://github.com/yangfawen/glTF-Export-Tutorial/blob/master/glTF-Upload-Plugins/GLB-Tutorial.pdf)
