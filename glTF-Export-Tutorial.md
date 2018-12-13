@@ -125,7 +125,7 @@ PBR材质的特性：https://www.marmoset.co/posts/physically-based-rendering-an
 但是我们必须注意：强度值需要为0-1，否则导出后也不能支持；
 
 #### 导出glTF步骤
-首先安装插件，插件下载地址：https://github.com/yangfawen/glTF-Export-Tutorial/blob/master/glTF-Export-Plugins/kivi_glTF_Exporter.unitypackage
+首先安装插件，插件下载地址：https://github.com/yangfawen/glTF-Export-Tutorial/raw/master/glTF-Export-Plugins/Kivicube_glTF_Exporter.unitypackage
 
 ![](glTF-Export-Tutorial/Unity_glTF1.png)
 - - - -
